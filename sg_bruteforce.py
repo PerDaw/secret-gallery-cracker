@@ -129,7 +129,7 @@ if __name__ == '__main__':
         print(f"Error: {directory} does not contain exactly two files.")
         exit(-1)
 
-    mmkv.MMKV.initializeMMKV('storage')
+    mmkv.MMKV.initializeMMKV(directory)
     kv_storage = mmkv.MMKV("secretgallery", mmkv.MMKVMode.SingleProcess, cryptKey="3890dca21335H2VrCX")
 
     hashed_passcode_bytes = kv_storage.getBytes("passcode_lock_prefs_password_key")
